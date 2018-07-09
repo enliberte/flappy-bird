@@ -1,18 +1,14 @@
-'use strict';
+express = require('express');
+app = express();
 
-const http = require('http');
-const fs = require('fs');
+//отдача статики
+app.use('/audio', express.static(__dirname + '/audio'));
+app.use('/img', express.static(__dirname + '/img'));
+app.use('/js', express.static(__dirname + '/js'));
 
-const server = http.createServer(function(request, response){
-   console.log(request.method, request.url);
-   if (request.url === 'style.css') {
-       const css = fs.readFileSync('style.css', 'utf8');
-       response.end(css);
-   } else {
-       const html = fs.readFileSync('index.html', 'utf8');
-       response.end(html);
-   }
+app.get('/', function (request, response) {
+    response.sendFile(__dirname + '/index.html');
 });
 
-server.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
 console.log('Server started');
