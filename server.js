@@ -1,5 +1,4 @@
 express = require('express');
-fs = require('fs');
 app = express();
 
 //отдача статики
@@ -11,5 +10,5 @@ app.get('/', function (request, response) {
     response.sendFile(__dirname + '/index.html');
 });
 
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
 console.info('Server started');
