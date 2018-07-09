@@ -11,5 +11,5 @@ app.get('/', function (request, response) {
     response.sendFile(__dirname + '/index.html');
 });
 
-app.listen(process.env.PORT, function () {});
+app.listen(80);
 console.info('Server started');
