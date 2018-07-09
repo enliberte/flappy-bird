@@ -11,9 +11,5 @@ app.get('/', function (request, response) {
     response.sendFile(__dirname + '/index.html');
 });
 
-app.get('/favicon.ico', function (request, response) {
-    response.sendFile(__dirname + '/index.html');
-});
-
 app.listen(process.env.PORT);
 console.log('Server started');
