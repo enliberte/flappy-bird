@@ -1,4 +1,4 @@
-express = require('express');
+express = require('./node_modules/express/index.js');
 app = express();
 port = process.env.PORT || 8000;
 
