@@ -12,5 +12,5 @@ app.get('/', function (request, response) {
 });
 
 app.listen(port, function () {
-    console.log('App is running on port' + port);
+    console.log('App is running on port ' + port);
 });
