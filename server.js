@@ -1,4 +1,4 @@
-express = require('./node_modules/express/index.js');
+express = require('express');
 app = express();
 port = process.env.PORT || 8000;
 
@@ -6,7 +6,6 @@ port = process.env.PORT || 8000;
 app.use('/audio', express.static(__dirname + '/audio'));
 app.use('/img', express.static(__dirname + '/img'));
 app.use('/js', express.static(__dirname + '/js'));
-/*app.use(favicon(__dirname + '/public/yourfavicon.ico'));*/
 
 app.get('/', function (request, response) {
     response.sendFile(__dirname + '/index.html');
