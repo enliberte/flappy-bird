@@ -12,10 +12,6 @@ app.get('/', function (request, response) {
     response.sendFile(__dirname + '/index.html');
 });
 
-app.post('/', function (request, response) {
-    response.sendFile(__dirname + '/index.html');
-});
-
 app.listen(port, function () {
     console.log('App is running on port' + port);
 });
