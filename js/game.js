@@ -1,12 +1,13 @@
 cvs = document.getElementById("game");
 ctx = cvs.getContext("2d");
-cvs2 = document.getElementById("menu");
-ctx2 = cvs2.getContext("2d");
+menu = document.getElementById("menu");
+new_game_btn = document.querySelector('#new_game');
+login_btn = document.querySelector('#login');
+register_btn = document.querySelector('#register');
 bird = new Image(); bg = new Image(); fg = new Image();
-pipeUp = new Image(); pipeBottom = new Image(); new_game_btn = new Image();
+pipeUp = new Image(); pipeBottom = new Image();
 bird.src = "img/bird.png"; bg.src = "img/bg.png"; fg.src = "img/fg.png";
 pipeUp.src = "img/pipeUp.png"; pipeBottom.src = "img/pipeBottom.png";
-new_game_btn.src = "img/new_game.png";
 fly = new Audio(); score_audio = new Audio();
 fly.src = "audio/fly.mp3"; score_audio.src = "audio/score.mp3";
 
@@ -41,7 +42,7 @@ function initial() {
 }
 
 function start_game() {
-    cvs2.hidden = true;
+    menu.hidden = true;
     cvs.hidden = false;
     initial();
     draw();
@@ -104,13 +105,11 @@ function draw_menu(){
     game_continues = false;
     cancelAnimationFrame(draw);
     cvs.hidden = true;
-    cvs2.hidden = false;
-    ctx2.drawImage(bg, 0, 0);
-    ctx2.drawImage(new_game_btn, 65, 238);
+    menu.hidden = false;
 }
 
 pipeBottom.onload = draw_menu;
-cvs2.addEventListener('click', start_game);
-cvs2.addEventListener('touchstart', start_game);
+new_game_btn.addEventListener('click', start_game);
+new_game_btn.addEventListener('touchstart', start_game);
 document.addEventListener('keydown', moveUp);
 document.addEventListener('touchstart', moveUp);

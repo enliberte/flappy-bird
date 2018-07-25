@@ -7,6 +7,7 @@ port = process.env.PORT || 8000;
 app.use('/audio', express.static(__dirname + '/audio'));
 app.use('/img', express.static(__dirname + '/img'));
 app.use('/js', express.static(__dirname + '/js'));
+app.use('/css', express.static(__dirname + '/css'));
 
 app.get('/', function (request, response) {
     response.sendFile(__dirname + '/index.html');

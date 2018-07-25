@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'pixel_font';
+    src: url("pixel_font.otf");
+}
+
+#menu {
+    width: 288px;
+    height: 512px;
+    background-image: url("../img/bg.png");
+}
+
+.menu_item {
+    width: 158px;
+    height: 36px;
+    margin: 15px auto;
+    background-image: url("new_game.png");
+    text-align: center;
+    position: relative;
+    top: 40%;
+}
+
+.menu_item span {
+    text-align: center;
+    position: relative;
+    top: 6px;
+    font-size: 20px;
+    font-family: pixel_font;
+}
