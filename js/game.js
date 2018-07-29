@@ -88,6 +88,8 @@ function check_collisions() {
 }
 
 function draw() {
+    document.addEventListener('keydown', moveUp);
+    document.addEventListener('touchstart', moveUp);
     cancelAnimationFrame(draw_menu);
     ctx.drawImage(bg, 0, 0);
     if (game_continues) {
@@ -108,6 +110,9 @@ function draw() {
 function draw_menu(){
     game_continues = false;
     cancelAnimationFrame(draw);
+    document.removeEventListener('keydown', moveUp);
+    document.removeEventListener('touchstart', moveUp);
+
     cvs.classList.add('hidden');
     menu.classList.remove('hidden');
     new_game_btn.classList.remove('hidden');
@@ -148,5 +153,3 @@ register_btn.addEventListener('touchstart', draw_register_form);
 back_btn.addEventListener('click', draw_menu);
 back_btn.addEventListener('touchstart', draw_menu);
 
-document.addEventListener('keydown', moveUp);
-document.addEventListener('touchstart', moveUp);
