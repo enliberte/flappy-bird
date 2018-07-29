@@ -33,8 +33,8 @@ function fall_bird_down() {
 
 function show_score() {
     ctx.fillStyle = "#000";
-    ctx.font = "24px Verdana";
-    ctx.fillText("Счет: " + score, 10, cvs.height - 20);
+    ctx.font = "24px pixel_font";
+    ctx.fillText("Score: " + score, 10, cvs.height - 20);
 }
 
 function initial() {
