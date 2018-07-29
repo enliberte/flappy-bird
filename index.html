@@ -16,8 +16,28 @@
         <div class="menu_item" id="register">
             <span>REGISTER</span>
         </div>
+        <div id="login_block" class="menu_item hidden">
+            <form action="" id="login_form">
+                <input type="text" placeholder="ENTER LOGIN">
+                <input type="password" placeholder="ENTER PASSWORD">
+                <input type="submit" value="LOGIN">
+            </form>
+        </div>
+        <div id="register_block" class="menu_item hidden">
+            <form action="" id="register_form">
+                <input type="text" placeholder="ENTER LOGIN">
+                <input type="password" placeholder="ENTER PASSWORD">
+                <input type="password" placeholder="CONFIRM PASSWORD">
+                <input type="submit" value="REGISTER">
+            </form>
+        </div>
     </div>
-    <canvas id="game" height="512" width="288"></canvas>
+    <div id="back_block">
+        <div class="menu_item hidden" id="back_btn">
+            <span>BACK</span>
+        </div>
+    </div>
+    <canvas id="game" height="512" width="288" class="hidden"></canvas>
     <script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>

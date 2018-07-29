@@ -3,6 +3,10 @@
     src: url("pixel_font.otf");
 }
 
+body {
+    font-family: pixel_font;
+}
+
 #menu {
     width: 288px;
     height: 512px;
@@ -19,10 +23,46 @@
     top: 40%;
 }
 
+#back_block {
+    width: 288px;
+    position: absolute;
+    top: 90%;
+}
+
+#back_btn {
+    width: 158px;
+    height: 36px;
+    margin: 15px auto;
+    background-image: url("new_game.png");
+    text-align: center;
+}
+
 .menu_item span {
     text-align: center;
     position: relative;
     top: 6px;
     font-size: 20px;
-    font-family: pixel_font;
 }
+
+.hidden {
+    display: none;
+}
+
+input {
+    border: forestgreen 1px solid;
+    font-family: pixel_font;
+    margin: 1px auto;
+    text-align: center;
+    width: 156px;
+    height: 34px;
+    text-align: center;
+}
+
+input[type="submit"] {
+    border: none;
+    background-image: url("new_game.png");
+    font-size: 20px;
+    width: 158px;
+    height: 36px;
+}
+

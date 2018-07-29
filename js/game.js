@@ -4,6 +4,10 @@ menu = document.getElementById("menu");
 new_game_btn = document.querySelector('#new_game');
 login_btn = document.querySelector('#login');
 register_btn = document.querySelector('#register');
+login_block = document.querySelector('#login_block');
+register_block = document.querySelector('#register_block');
+back_btn = document.querySelector('#back_btn');
+
 bird = new Image(); bg = new Image(); fg = new Image();
 pipeUp = new Image(); pipeBottom = new Image();
 bird.src = "img/bird.png"; bg.src = "img/bg.png"; fg.src = "img/fg.png";
@@ -42,8 +46,8 @@ function initial() {
 }
 
 function start_game() {
-    menu.hidden = true;
-    cvs.hidden = false;
+    menu.classList.add('hidden');
+    cvs.classList.remove('hidden');
     initial();
     draw();
 }
@@ -104,12 +108,45 @@ function draw() {
 function draw_menu(){
     game_continues = false;
     cancelAnimationFrame(draw);
-    cvs.hidden = true;
-    menu.hidden = false;
+    cvs.classList.add('hidden');
+    menu.classList.remove('hidden');
+    new_game_btn.classList.remove('hidden');
+    login_btn.classList.remove('hidden');
+    register_btn.classList.remove('hidden');
+    login_block.classList.add('hidden');
+    register_block.classList.add('hidden');
+    back_btn.classList.add('hidden');
 }
 
+function draw_login_form(){
+    new_game_btn.classList.add('hidden');
+    login_btn.classList.add('hidden');
+    register_btn.classList.add('hidden');
+    login_block.classList.remove('hidden');
+    back_btn.classList.remove('hidden');
+}
+
+function draw_register_form(){
+    new_game_btn.classList.add('hidden');
+    login_btn.classList.add('hidden');
+    register_btn.classList.add('hidden');
+    register_block.classList.remove('hidden');
+    back_btn.classList.remove('hidden');
+}
 pipeBottom.onload = draw_menu;
+//обработчики кнопок
+//новая игра
 new_game_btn.addEventListener('click', start_game);
 new_game_btn.addEventListener('touchstart', start_game);
+//аутентификация
+login_btn.addEventListener('click', draw_login_form);
+login_btn.addEventListener('touchstart', draw_login_form);
+//регистрация
+register_btn.addEventListener('click', draw_register_form);
+register_btn.addEventListener('touchstart', draw_register_form);
+//назад в меню
+back_btn.addEventListener('click', draw_menu);
+back_btn.addEventListener('touchstart', draw_menu);
+
 document.addEventListener('keydown', moveUp);
 document.addEventListener('touchstart', moveUp);
