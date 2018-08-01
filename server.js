@@ -1,6 +1,6 @@
 query = require('querystring')
 express = require('express');
-Client = require('pg');
+const { Client } = require('pg');
 app = express();
 port = process.env.PORT || 8000;
 
