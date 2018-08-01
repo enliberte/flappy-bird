@@ -1,7 +1,23 @@
 query = require('querystring')
 express = require('express');
+Client = require('pg');
 app = express();
 port = process.env.PORT || 8000;
+
+//создаем подключение к БД
+client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true}
+);
+client.connect();
+
+client.query('SELECT name FROM users;', (err, res) => {
+    if (err) throw err;
+    for (let row of res.rows) {
+        console.log(JSON.stringify(row));
+    }
+   client.end();
+});
 
 //отдача статики
 app.use('/audio', express.static(__dirname + '/audio'));
